@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
                 view.showsNodeCount = true
                 
                 view.ignoresSiblingOrder = true
-                // Set the scale mode to scale to fit the window
+                // Set the scale mode to scale to fit the window!
                 scene.scaleMode = .aspectFill
                 scene.size = self.view.bounds.size
                 
