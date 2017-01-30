@@ -17,6 +17,7 @@
 		824099221E3BD68800DE223F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 824099201E3BD68800DE223F /* LaunchScreen.storyboard */; };
 		8240992D1E3BD68800DE223F /* FlappyGhostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8240992C1E3BD68800DE223F /* FlappyGhostTests.swift */; };
 		824099381E3BD68800DE223F /* FlappyGhostUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824099371E3BD68800DE223F /* FlappyGhostUITests.swift */; };
+		8284F49A1E3FDE5700C96ECA /* RandomFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284F4991E3FDE5700C96ECA /* RandomFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		824099331E3BD68800DE223F /* FlappyGhostUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyGhostUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		824099371E3BD68800DE223F /* FlappyGhostUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyGhostUITests.swift; sourceTree = "<group>"; };
 		824099391E3BD68800DE223F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8284F4991E3FDE5700C96ECA /* RandomFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		824099101E3BD68800DE223F /* FlappyGhost */ = {
 			isa = PBXGroup;
 			children = (
+				8284F4991E3FDE5700C96ECA /* RandomFunction.swift */,
 				824099111E3BD68800DE223F /* AppDelegate.swift */,
 				824099131E3BD68800DE223F /* GameScene.sks */,
 				824099151E3BD68800DE223F /* Actions.sks */,
@@ -272,6 +275,7 @@
 			files = (
 				824099181E3BD68800DE223F /* GameScene.swift in Sources */,
 				8240991A1E3BD68800DE223F /* GameViewController.swift in Sources */,
+				8284F49A1E3FDE5700C96ECA /* RandomFunction.swift in Sources */,
 				824099121E3BD68800DE223F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +521,7 @@
 				8240993E1E3BD68800DE223F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8240993F1E3BD68800DE223F /* Build configuration list for PBXNativeTarget "FlappyGhostTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +530,7 @@
 				824099411E3BD68800DE223F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		824099421E3BD68800DE223F /* Build configuration list for PBXNativeTarget "FlappyGhostUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +539,7 @@
 				824099441E3BD68800DE223F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
