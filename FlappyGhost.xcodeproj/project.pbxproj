@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822219591E40EA500020C6ED /* 04B_19__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 822219581E40EA500020C6ED /* 04B_19__.TTF */; };
 		824099121E3BD68800DE223F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824099111E3BD68800DE223F /* AppDelegate.swift */; };
 		824099141E3BD68800DE223F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 824099131E3BD68800DE223F /* GameScene.sks */; };
 		824099161E3BD68800DE223F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 824099151E3BD68800DE223F /* Actions.sks */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		822219581E40EA500020C6ED /* 04B_19__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04B_19__.TTF; sourceTree = "<group>"; };
 		8240990E1E3BD68800DE223F /* FlappyGhost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlappyGhost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824099111E3BD68800DE223F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		824099131E3BD68800DE223F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		824099101E3BD68800DE223F /* FlappyGhost */ = {
 			isa = PBXGroup;
 			children = (
+				822219581E40EA500020C6ED /* 04B_19__.TTF */,
 				8284F4991E3FDE5700C96ECA /* RandomFunction.swift */,
 				824099111E3BD68800DE223F /* AppDelegate.swift */,
 				824099131E3BD68800DE223F /* GameScene.sks */,
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8240991D1E3BD68800DE223F /* Main.storyboard in Resources */,
+				822219591E40EA500020C6ED /* 04B_19__.TTF in Resources */,
 				824099141E3BD68800DE223F /* GameScene.sks in Resources */,
 				8240991F1E3BD68800DE223F /* Assets.xcassets in Resources */,
 				824099221E3BD68800DE223F /* LaunchScreen.storyboard in Resources */,
