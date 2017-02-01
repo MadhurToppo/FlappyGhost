@@ -126,17 +126,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             score += 1
             scoreLbl.text = "\(score)"
             firstBody.node?.removeFromParent()
-        }
-            
-        else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Score {
+        } else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Score {
             
             score += 1
             scoreLbl.text = "\(score)"
             secondBody.node?.removeFromParent()
 
-        }
-        
-        else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Wall || firstBody.categoryBitMask == PhysicsCategory.Wall && secondBody.categoryBitMask == PhysicsCategory.Ghost {
+        } else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Wall || firstBody.categoryBitMask == PhysicsCategory.Wall && secondBody.categoryBitMask == PhysicsCategory.Ghost {
             
             enumerateChildNodes(withName: "wallPair", using: ({
                 (node, error) in
@@ -187,7 +183,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.run(spawnDelayForever)
             
             let distance = CGFloat(self.frame.width + wallPair.frame.width)
-            let movePipes = SKAction.moveBy(x: -distance, y: 0, duration: 0.01 * Double(distance))
+            let movePipes = SKAction.moveBy(x: -distance - 50, y: 0, duration: 0.01 * Double(distance))
             //let movePipes = SKAction.moveBy(x: -distance - 50, y: 0, duration: TimeInterval(0.008 * distance))
 
             let removePipes = SKAction.removeFromParent()
@@ -227,11 +223,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createWalls() {
         
         //Score Node in between the 2 walls to keep track of score
-        let scoreNode = SKSpriteNode(imageNamed: "Coin")
+        let scoreNode = SKSpriteNode()
         
-        scoreNode.size = CGSize(width: 50, height: 50)
+        scoreNode.size = CGSize(width: 40, height: 40)
         //scoreNode.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
-        scoreNode.position = CGPoint(x: self.frame.width / 2, y: 0)
+        scoreNode.position = CGPoint(x: self.frame.width / 2 + 25, y: 0)
 
         scoreNode.physicsBody = SKPhysicsBody(rectangleOf: scoreNode.size)
         scoreNode.physicsBody?.affectedByGravity = false
@@ -239,7 +235,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreNode.physicsBody?.categoryBitMask = PhysicsCategory.Score
         scoreNode.physicsBody?.collisionBitMask = 0
         scoreNode.physicsBody?.contactTestBitMask = PhysicsCategory.Ghost
-        scoreNode.color = SKColor.blue
         
         
         wallPair = SKNode()
@@ -248,8 +243,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let topWall = SKSpriteNode(imageNamed: "Wall")
         let bottomWall = SKSpriteNode(imageNamed: "Wall")
         
-        topWall.position = CGPoint(x: self.frame.width / 2, y: 0 + 350)
-        bottomWall.position = CGPoint(x: self.frame.width / 2, y: 0 - 350)
+        topWall.position = CGPoint(x: self.frame.width / 2 + 25, y: 0 + 350)
+        bottomWall.position = CGPoint(x: self.frame.width / 2 + 25, y: 0 - 350)
         
         topWall.setScale(0.5)
         bottomWall.setScale(0.5)
