@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-//import GameplayKit
 
 struct PhysicsCategory {
     static let Ghost : UInt32 = 0x1 << 1
@@ -49,7 +48,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let background = SKSpriteNode(imageNamed: "Background")
             background.anchorPoint = CGPoint.zero
             background.position = CGPoint(x: CGFloat(i) * self.frame.width, y: -self.frame.height / 2)
-            //background.position = CGPoint(x: 0, y: 0)
             background.name = "background"
             background.size = (self.view?.bounds.size)!
             self.addChild(background)
@@ -66,7 +64,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Ground = SKSpriteNode(imageNamed: "Ground")
         Ground.setScale(0.5)
         Ground.position = CGPoint(x: 0, y: -self.frame.height / 2 + Ground.frame.height / 2)
-        //Ground.position = CGPoint(x: self.frame.width / 2, y: 0 + Ground.frame.height / 2)
         
         //Added Ground Physics
         Ground.physicsBody = SKPhysicsBody(rectangleOf: Ground.size)
@@ -147,9 +144,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             }
             
-        }
-        
-        else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Ground || firstBody.categoryBitMask == PhysicsCategory.Ground && secondBody.categoryBitMask == PhysicsCategory.Ghost {
+        } else if firstBody.categoryBitMask == PhysicsCategory.Ghost && secondBody.categoryBitMask == PhysicsCategory.Ground || firstBody.categoryBitMask == PhysicsCategory.Ground && secondBody.categoryBitMask == PhysicsCategory.Ghost {
             
             enumerateChildNodes(withName: "wallPair", using: ({
                 (node, error) in
@@ -184,7 +179,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             let distance = CGFloat(self.frame.width + wallPair.frame.width)
             let movePipes = SKAction.moveBy(x: -distance - 50, y: 0, duration: 0.01 * Double(distance))
-            //let movePipes = SKAction.moveBy(x: -distance - 50, y: 0, duration: TimeInterval(0.008 * distance))
 
             let removePipes = SKAction.removeFromParent()
             moveAndRemove = SKAction.sequence([movePipes, removePipes])
@@ -214,9 +208,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        
-        //Ghost.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-        //Ghost.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 60))
     }
     
     //Creating Walls dynamically
@@ -226,7 +217,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let scoreNode = SKSpriteNode()
         
         scoreNode.size = CGSize(width: 40, height: 40)
-        //scoreNode.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         scoreNode.position = CGPoint(x: self.frame.width / 2 + 25, y: 0)
 
         scoreNode.physicsBody = SKPhysicsBody(rectangleOf: scoreNode.size)
