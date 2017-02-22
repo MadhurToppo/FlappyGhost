@@ -30,6 +30,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var died = Bool()
     var restartBTN = SKSpriteNode()
     
+    
+    //Function to restart the scene
     func restartScene() {
         self.removeAllChildren()
         self.removeAllActions()
@@ -39,17 +41,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         createScene()
     }
     
+    //Function to create the Scene
     func createScene() {
         
         self.physicsWorld.contactDelegate = self
         
         for i in stride(from: -0.5, to: 1.5, by: 1){
             
-            let background = SKSpriteNode(imageNamed: "Background")
+            let background = SKSpriteNode(imageNamed: "edf1dcd5b5fa4ff912d0b21901b56cf7")
             background.anchorPoint = CGPoint.zero
-            background.position = CGPoint(x: CGFloat(i) * self.frame.width, y: -self.frame.height / 2)
+            //background.position = CGPoint(x: CGFloat(i) * self.frame.width, y: -self.frame.height / 2)
+            background.position = CGPoint(x: CGFloat(i) * background.frame.width, y: -self.frame.height / 2)
+
             background.name = "background"
-            background.size = (self.view?.bounds.size)!
+            //background.size = (self.view?.bounds.size)!
             self.addChild(background)
         
         }
@@ -96,12 +101,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
-    
+    //Function to call the create scene method
     override func didMove(to view: SKView) {
         //Setup your scene here
             createScene()
     }
     
+    
+    //Create Restart Button after dying
     func createBTN() {
         
         restartBTN = SKSpriteNode(imageNamed: "RestartBtn")
@@ -115,6 +122,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     }
     
+    //Ghost collided with other Environment bodies
     func didBegin(_ contact: SKPhysicsContact) {
         let firstBody = contact.bodyA
         let secondBody = contact.bodyB
@@ -162,6 +170,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    //Created touch functionalities
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if gameStarted == false {
             
@@ -282,7 +291,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     let bg = node as! SKSpriteNode
                     
-                    bg.position = CGPoint(x: bg.position.x - 3, y: bg.position.y)
+                    bg.position = CGPoint(x: bg.position.x - 20, y: bg.position.y)
                     
                     if bg.position.x <= -bg.size.width * 1.5  {
                         bg.position = CGPoint(x: bg.position.x + bg.size.width * 2, y: bg.position.y)
